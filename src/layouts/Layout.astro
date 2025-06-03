@@ -23,9 +23,10 @@ type Props = {
 	description?: string
 	ogImage?: string
 	noindex?: boolean
+	class?: string // Add class to Props
 }
 // Page Metadata
-const { title, description, ogImage, noindex } = Astro.props
+const { title, description, ogImage, noindex, class: className } = Astro.props // Destructure class as className
 ---
 
 <!doctype html>
@@ -33,6 +34,7 @@ const { title, description, ogImage, noindex } = Astro.props
 	<Header title={title} description={description} ogImage={ogImage} noindex={noindex} />
 	<body
 		class:list={[
+			className, // Use the passed className
 			{ ['mode-' + `${configData.mode}`]: configData.mode },
 			{ ['scroll-animation']: configData.scrollAnimations }
 		]}
