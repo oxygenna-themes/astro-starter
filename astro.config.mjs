@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import partytown from "@astrojs/partytown";
 import icon from "astro-icon";
-// import tailwindcss from '@tailwindcss/vite'; // Removed
+import tailwindcss from "@tailwindcss/vite";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -17,6 +17,9 @@ export default defineConfig({
       },
     }),
   ],
+  vite: {
+    plugins: [tailwindcss()]
+  }
   // vite: { // Vite config removed if no other plugins need it
   //   plugins: [
   //     // tailwindcss(), // Removed
