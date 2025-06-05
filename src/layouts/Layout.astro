@@ -1,10 +1,7 @@
 ---
 // Imports
 // Components
-import NavigationBar from '../components/ui/NavigationBar.astro'
 import Main from '../components/ui/Main.astro'
-import Footer from '../components/ui/Footer.astro'
-import Modal from '../components/blocks/modal/SignUp.astro'
 import Header from '../components/blocks/head/Header.astro'
 // Scripts
 import Scriprs from '../components/scripts/LocalScripts.astro'
@@ -40,12 +37,9 @@ const { title, description, ogImage, noindex, class: className } = Astro.props /
 		]}
 	>
 		<GoogleTagManagerBody />
-		<NavigationBar />
 		<Main>
 			<slot />
 		</Main>
-		<Footer />
-		<Modal />
 		<Scriprs />
 	</body>
 </html>
