@@ -1,0 +1,125 @@
+---
+// Header - Navigation bar
+// ------------
+// Description: navigation bars offer a persistent and convenient way to switch between primary destinations in an app.
+// Structure:
+// - Logo: the logo of the website
+// - Menu toggle: the mobile menu toggle of the navigation bar
+// - Navigation Links: the navigation links of the menu
+// - Actions: action buttons for the navigation bar
+// - Theme Switcher: the mode (light/dark) switcher of the website
+
+// Reference: https://wind-ui.com/components/navbars/
+
+// Styles
+import '../../styles/navigationBar.css'
+
+// Components
+// - UI
+import { Icon } from 'astro-icon/components'
+// import Button from './Button.astro'
+// import Switcher from './ModeSwitcher.astro'
+
+// Data
+import { navigationBarData } from '../../config/navigationBar'
+const { logo, navItems, navActions } = navigationBarData
+
+// Determine current path
+const path = new URL(Astro.request.url).pathname
+function isActivePath(currentPath: string): boolean {
+	return path === currentPath || path === `${currentPath}/`
+}
+
+// Type assertion for navActions to ensure type safety
+const savedNavActions = navActions.map((action) => ({
+	...action,
+	size: action.size as 'base' | 'lg' | 'sm',
+	style: action.style as 'primary' | 'secondary' | 'neutral'
+}))
+---
+
+<header class="header">
+	<div class="header__container">
+		<nav aria-label="main navigation" role="navigation" class="header__nav">
+			<!-- Logo -->
+			<a href="/" class="header__logo">
+				<img src={logo.src} alt={logo.alt} width="48" height="48" />
+				<span>{logo.text}</span>
+			</a>
+
+			<!-- Menu toggle -->
+			<button
+				id="header-toggle"
+				class="header__toggle"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<div class="header__toggle-inner">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</div>
+			</button>
+
+			<!-- Navigation links -->
+			<ul role="menubar" aria-label="Select page" class="header__menu">
+				{
+					navItems.map((item) => (
+						<li role="none" class="header__menu-item">
+							{!item.submenu ? (
+								<a
+									href={item.link}
+									role="menuitem"
+									class={`header__menu-link hover:text-primary-500 ${isActivePath(item.link) ? 'active' : ''}`}
+								>
+									{item.name}
+								</a>
+							) : (
+								<span
+									role="menuitem"
+									class={`header__menu-link ${isActivePath(item.link) ? 'active' : ''}`}
+								>
+									{item.name}
+									<Icon name="chevron-down" class="header__menu-chevron" />
+								</span>
+							)}
+							{item.submenu && (
+								<ul class="header__submenu">
+									{item.submenu.map((subItem) => (
+										<li role="none" class="header__submenu-item">
+											<a
+												href={subItem.link}
+												role="menuitem"
+												class={`header__menu-link ${isActivePath(item.link) ? 'active' : ''}`}
+											>
+												{subItem.name}
+											</a>
+										</li>
+									))}
+								</ul>
+							)}
+						</li>
+					))
+				}
+			</ul>
+
+			<!-- Theme Switcher -->
+			<!-- <Switcher /> -->
+
+			<!-- Navigation action buttons -->
+			<!-- <div class="header__actions">
+				{
+					savedNavActions.map((action) => (
+						<Button classes="flex-auto" size={action.size} style={action.style} modal="signup">
+							{action.name}
+						</Button>
+					))
+				}
+			</div> -->
+		</nav>
+	</div>
+</header>
+
+<style>
+	
+</style>

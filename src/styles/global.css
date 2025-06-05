@@ -1,9 +1,74 @@
 @import 'tailwindcss';
 
 @theme {
-	--color-mint-500: oklch(0.72 0.11 178);
+	/* Colors */
+	/* Primary */
+	--color-primary-50: '#fdf2f8';
+	--color-primary-100: '#fce7f3';
+	--color-primary-200: '#fbcfe8';
+	--color-primary-300: '#f9a8d4';
+	--color-primary-400: '#f472b6';
+	--color-primary-500: '#E2187D';
+	--color-primary-600: '#db2777';
+	--color-primary-700: '#be185d';
+	--color-primary-800: '#9d174d';
+	--color-primary-900: '#831843';
+	--color-primary-950: '#500724';
+	/* Neutral */
+	--color-neutral-50: '#f8fafc';
+	--color-neutral-100: '#f1f5f9';
+	--color-neutral-200: '#e2e8f0';
+	--color-neutral-300: '#cbd5e1';
+	--color-neutral-400: '#94a3b8';
+	--color-neutral-500: '#64748b';
+	--color-neutral-600: '#475569';
+	--color-neutral-700: '#334155';
+	--color-neutral-800: '#1e293b';
+	--color-neutral-900: '#0f172a';
+	--color-neutral-950: '#020617';
+
+	/* Fonts */
+	--font-headings: 'Outfit', sans-serif;
+	--font-body: 'Inter', sans-serif;
+
+	/* Animations */
+	--animate-dropdown: dropdown 300ms ease-in-out forwards;
+	--animate-fadeInShadowLight: fadeInShadowLight 500ms ease-in-out forwards;
+	--animate-fadeInShadowDark: fadeInShadowDark 500ms ease-in-out forwards;
+	--animate-fadeUp: fadeUp 500ms ease-in-out forwards;
+
+	@keyframes dropdown {
+		0% {
+			transform: 'translateY(-1rem)';
+			opacity: 0;
+		}
+		100% {
+			transform: 'translateY(0)';
+			opacity: 1;
+		}
+	}
+	@keyframes fadeInShadowLight {
+		'100%' {
+			boxshadow: '0 20px 25px -5px rgba(15, 23, 42, .025), 0 8px 10px -6px rgba(15, 23, 42, .025);';
+		}
+	}
+	@keyframes fadeInShadowDark: {
+		'100%' {
+			boxshadow: '0 20px 25px -5px rgba(2, 6, 23, .25), 0 8px 10px -6px rgba(2, 6, 23, .25);';
+		}
+	}
+	@keyframes fadeUp {
+		'0%' {
+			transform: 'translateY(1rem)';
+			opacity: 0;
+		}
+		'100%' {
+			transform: 'translateY(0)';
+			opacity: 1;
+		}
+	}
 }
 
 body {
-	@apply bg-mint-500;
+	@apply bg-white;
 }

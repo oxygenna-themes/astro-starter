@@ -3,6 +3,7 @@
 // Components
 import Main from '../components/ui/Main.astro'
 import Header from '../components/blocks/head/Header.astro'
+import NavigationBar from '../components/ui/NavigationBar.astro'
 // Scripts
 import Scriprs from '../components/scripts/LocalScripts.astro'
 import GoogleTagManagerBody from '../components/scripts/googleTagManagerBody.astro'
@@ -36,6 +37,7 @@ const { title, description, ogImage, noindex, class: className } = Astro.props /
 			{ ['scroll-animation']: configData.scrollAnimations }
 		]}
 	>
+		<NavigationBar />
 		<GoogleTagManagerBody />
 		<Main>
 			<slot />
