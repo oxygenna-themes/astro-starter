@@ -17,7 +17,7 @@ import '../../styles/navigationBar.css'
 // Components
 // - UI
 import { Icon } from 'astro-icon/components'
-// import Button from './Button.astro'
+import Button from './Button.astro'
 // import Switcher from './ModeSwitcher.astro'
 
 // Data
@@ -70,7 +70,7 @@ const savedNavActions = navActions.map((action) => ({
 								<a
 									href={item.link}
 									role="menuitem"
-									class={`header__menu-link hover:text-primary-500 ${isActivePath(item.link) ? 'active' : ''}`}
+									class={`header__menu-link  ${isActivePath(item.link) ? 'active' : ''}`}
 								>
 									{item.name}
 								</a>
@@ -107,7 +107,7 @@ const savedNavActions = navActions.map((action) => ({
 			<!-- <Switcher /> -->
 
 			<!-- Navigation action buttons -->
-			<!-- <div class="header__actions">
+			<div class="header__actions">
 				{
 					savedNavActions.map((action) => (
 						<Button classes="flex-auto" size={action.size} style={action.style} modal="signup">
@@ -115,11 +115,7 @@ const savedNavActions = navActions.map((action) => ({
 						</Button>
 					))
 				}
-			</div> -->
+			</div>
 		</nav>
 	</div>
 </header>
-
-<style>
-	
-</style>

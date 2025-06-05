@@ -25,7 +25,7 @@
 	@apply relative flex cursor-pointer flex-col items-stretch lg:flex-row;
 }
 .header__menu-link {
-	@apply focus:text-primary-600 [&.active]:text-primary-500 relative flex items-center gap-1 py-4 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-6;
+	@apply hover:text-primary-500 focus:text-primary-600 [&.active]:text-primary-500 relative flex items-center gap-1 py-4 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-6;
 }
 .header__menu-chevron {
 	@apply h-4 w-4 transition-transform [.header\_\_menu-item.open_&]:rotate-180;
