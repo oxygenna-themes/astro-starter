@@ -1,0 +1,28 @@
+---
+// Imports
+const { frontmatter } = Astro.props
+
+//Components
+// - Layout
+import Layout from './Layout.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: `${frontmatter.title} | Foxi`,
+	description: `${frontmatter.description}`
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<div class="post-body basic-text basic-text--lg">
+		<slot />
+	</div>
+</Layout>
+
+<style>
+	@reference '../../styles/global.css';
+	.post-body {
+		@apply mx-auto max-w-3xl px-6 py-12 lg:py-24;
+	}
+</style>
