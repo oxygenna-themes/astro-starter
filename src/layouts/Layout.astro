@@ -1,9 +1,10 @@
 ---
 // Imports
 // Components
-import Main from '../components/ui/Main.astro'
-import Header from '../components/blocks/head/Header.astro'
 import NavigationBar from '../components/ui/NavigationBar.astro'
+import Main from '../components/ui/Main.astro'
+import Footer from '../components/ui/Footer.astro'
+import Header from '../components/blocks/head/Header.astro'
 // Scripts
 import Scriprs from '../components/scripts/LocalScripts.astro'
 import GoogleTagManagerBody from '../components/scripts/googleTagManagerBody.astro'
@@ -21,27 +22,27 @@ type Props = {
 	description?: string
 	ogImage?: string
 	noindex?: boolean
-	class?: string // Add class to Props
+	classes?: string
 }
 // Page Metadata
-const { title, description, ogImage, noindex, class: className } = Astro.props // Destructure class as className
+const { title, description, ogImage, noindex, classes } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-animation mode-auto">
+<html lang="en" class="relative scroll-animation mode-light">
 	<Header title={title} description={description} ogImage={ogImage} noindex={noindex} />
 	<body
 		class:list={[
-			className, // Use the passed className
-			{ ['mode-' + `${configData.mode}`]: configData.mode },
-			{ ['scroll-animation']: configData.scrollAnimations }
+			{ ['scroll-animation']: configData.scrollAnimations },
+			{ [`${classes}`]: classes }
 		]}
 	>
-		<NavigationBar />
 		<GoogleTagManagerBody />
+		<NavigationBar />
 		<Main>
 			<slot />
 		</Main>
+		<Footer />
 		<Scriprs />
 	</body>
 </html>
