@@ -21,14 +21,10 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'Foxi. Tailwind CSS Astro Starter Kit by Oxygenna',
-	siteDescription:
-		'Foxi is a design and development agency that specializes in creating beautiful and functional websites.',
+	siteTitle: 'Astro Starter Kit',
+	siteDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
 	ogImage: '/og.jpg',
-	logo: {
-		src: '/logo.svg',
-		alt: 'Foxi. logo'
-	},
+	logo: { src: '/logo.svg', alt: 'Astro Starter Kit logo' },
 	canonical: true,
 	noindex: false,
 	mode: 'auto',

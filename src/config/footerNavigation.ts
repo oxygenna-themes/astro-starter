@@ -35,77 +35,37 @@ export interface FooterData {
 
 export const footerNavigationData: FooterData = {
 	footerAbout: {
-		title: 'Foxi.',
-		aboutText:
-			'Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.',
-		logo: {
-			src: '/logo.svg',
-			alt: 'The tailwind astro theme',
-			text: 'Foxi.'
-		}
+		title: 'Astro Starter Kit',
+		aboutText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. ',
+		logo: { src: '/logo.svg', alt: 'The tailwind astro theme', text: 'Astro Starter Kit' }
 	},
 	footerColumns: [
 		{
 			category: 'Product',
 			subCategories: [
-				{
-					subCategory: 'Features',
-					subCategoryLink: '/features'
-				},
-				{
-					subCategory: 'FAQ',
-					subCategoryLink: '/faq'
-				},
-				{
-					subCategory: 'Pricing',
-					subCategoryLink: '/pricing'
-				},
-				{
-					subCategory: 'Changelog',
-					subCategoryLink: '/changelog'
-				},
-				{
-					subCategory: 'Terms',
-					subCategoryLink: '/terms'
-				}
+				{ subCategory: 'Features', subCategoryLink: '#' },
+				{ subCategory: 'FAQ', subCategoryLink: '#' },
+				{ subCategory: 'Pricing', subCategoryLink: '#' },
+				{ subCategory: 'Changelog', subCategoryLink: '#' },
+				{ subCategory: 'Terms', subCategoryLink: '#' }
 			]
 		},
 		{
 			category: 'About us',
 			subCategories: [
-				{
-					subCategory: 'About us',
-					subCategoryLink: '/'
-				},
-				{
-					subCategory: 'News',
-					subCategoryLink: '/blog'
-				},
-				{
-					subCategory: 'Careers',
-					subCategoryLink: '/blog'
-				}
+				{ subCategory: 'About us', subCategoryLink: '#' },
+				{ subCategory: 'News', subCategoryLink: '#' },
+				{ subCategory: 'Careers', subCategoryLink: '#' }
 			]
 		},
 		{
 			category: 'Get in touch',
 			subCategories: [
-				{
-					subCategory: 'Contact',
-					subCategoryLink: '/contact'
-				},
-				{
-					subCategory: 'Support',
-					subCategoryLink: '/contact'
-				},
-				{
-					subCategory: 'Join us',
-					subCategoryLink: '/contact'
-				}
+				{ subCategory: 'Contact', subCategoryLink: '#' },
+				{ subCategory: 'Support', subCategoryLink: '#' },
+				{ subCategory: 'Join us', subCategoryLink: '#' }
 			]
 		}
 	],
-	subFooter: {
-		copywriteText: '© Foxi 2024.'
-	}
+	subFooter: { copywriteText: '© Astro Starter Kit 2024.' }
 }
